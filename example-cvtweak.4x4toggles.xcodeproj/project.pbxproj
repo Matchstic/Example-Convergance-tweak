@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C94517AD18B808ED001B5D6E /* Tweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = C94517AB18B808ED001B5D6E /* Tweak.mm */; };
+		C94517B118B8094F001B5D6E /* example-cvtweak.4x4toggles-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C94517B018B8094F001B5D6E /* example-cvtweak.4x4toggles-Prefix.pch */; };
+		C969519F18B7B57C001100A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C969519E18B7B57C001100A1 /* Foundation.framework */; };
+		C96951B518B7B58E001100A1 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96951B418B7B58E001100A1 /* libsubstrate.dylib */; };
+		C96951B718B7CAFE001100A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96951B618B7CAFE001100A1 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C94517AB18B808ED001B5D6E /* Tweak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tweak.mm; sourceTree = "<group>"; };
+		C94517AC18B808ED001B5D6E /* Tweak.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tweak.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		C94517B018B8094F001B5D6E /* example-cvtweak.4x4toggles-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "example-cvtweak.4x4toggles-Prefix.pch"; sourceTree = "<group>"; };
+		C969519B18B7B57C001100A1 /* example-cvtweak.4x4toggles.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "example-cvtweak.4x4toggles.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C969519E18B7B57C001100A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C96951A318B7B57C001100A1 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		C96951A418B7B57C001100A1 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		C96951A618B7B57C001100A1 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		C96951AE18B7B57C001100A1 /* example_cvtweak_4x4toggles.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = example_cvtweak_4x4toggles.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/example_cvtweak_4x4toggles.plist; sourceTree = "<group>"; };
+		C96951B418B7B58E001100A1 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+		C96951B618B7CAFE001100A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C969519718B7B57C001100A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96951B718B7CAFE001100A1 /* UIKit.framework in Frameworks */,
+				C96951B518B7B58E001100A1 /* libsubstrate.dylib in Frameworks */,
+				C969519F18B7B57C001100A1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C969519018B7B57C001100A1 = {
+			isa = PBXGroup;
+			children = (
+				C96951A018B7B57C001100A1 /* example-cvtweak.4x4toggles */,
+				C969519D18B7B57C001100A1 /* Frameworks */,
+				C969519C18B7B57C001100A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C969519C18B7B57C001100A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C969519B18B7B57C001100A1 /* example-cvtweak.4x4toggles.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C969519D18B7B57C001100A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C96951B618B7CAFE001100A1 /* UIKit.framework */,
+				C96951B418B7B58E001100A1 /* libsubstrate.dylib */,
+				C969519E18B7B57C001100A1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96951A018B7B57C001100A1 /* example-cvtweak.4x4toggles */ = {
+			isa = PBXGroup;
+			children = (
+				C94517AB18B808ED001B5D6E /* Tweak.mm */,
+				C94517AC18B808ED001B5D6E /* Tweak.xm */,
+				C96951A118B7B57C001100A1 /* Package */,
+				C96951A518B7B57C001100A1 /* Supporting Files */,
+			);
+			path = "example-cvtweak.4x4toggles";
+			sourceTree = "<group>";
+		};
+		C96951A118B7B57C001100A1 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				C96951A218B7B57C001100A1 /* DEBIAN */,
+				C96951AB18B7B57C001100A1 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		C96951A218B7B57C001100A1 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				C96951A318B7B57C001100A1 /* control.txt */,
+				C96951A418B7B57C001100A1 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		C96951A518B7B57C001100A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C94517B018B8094F001B5D6E /* example-cvtweak.4x4toggles-Prefix.pch */,
+				C96951A618B7B57C001100A1 /* PackageVersion.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C96951AB18B7B57C001100A1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C96951AC18B7B57C001100A1 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		C96951AC18B7B57C001100A1 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				C96951AD18B7B57C001100A1 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		C96951AD18B7B57C001100A1 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				C96951AE18B7B57C001100A1 /* example_cvtweak_4x4toggles.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C969519818B7B57C001100A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94517B118B8094F001B5D6E /* example-cvtweak.4x4toggles-Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C969519A18B7B57C001100A1 /* example-cvtweak.4x4toggles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C96951B118B7B57C001100A1 /* Build configuration list for PBXNativeTarget "example-cvtweak.4x4toggles" */;
+			buildPhases = (
+				C969519518B7B57C001100A1 /* ShellScript */,
+				C969519618B7B57C001100A1 /* Sources */,
+				C969519718B7B57C001100A1 /* Frameworks */,
+				C969519818B7B57C001100A1 /* Headers */,
+				C969519918B7B57C001100A1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "example-cvtweak.4x4toggles";
+			productName = "example-cvtweak.4x4toggles";
+			productReference = C969519B18B7B57C001100A1 /* example-cvtweak.4x4toggles.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C969519118B7B57C001100A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = C969519418B7B57C001100A1 /* Build configuration list for PBXProject "example-cvtweak.4x4toggles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C969519018B7B57C001100A1;
+			productRefGroup = C969519C18B7B57C001100A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C969519A18B7B57C001100A1 /* example-cvtweak.4x4toggles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C969519518B7B57C001100A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		C969519918B7B57C001100A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C969519618B7B57C001100A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94517AD18B808ED001B5D6E /* Tweak.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C96951AF18B7B57C001100A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		C96951B018B7B57C001100A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		C96951B218B7B57C001100A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "example-cvtweak.4x4toggles/example-cvtweak.4x4toggles-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		C96951B318B7B57C001100A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "example-cvtweak.4x4toggles/example-cvtweak.4x4toggles-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C969519418B7B57C001100A1 /* Build configuration list for PBXProject "example-cvtweak.4x4toggles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96951AF18B7B57C001100A1 /* Debug */,
+				C96951B018B7B57C001100A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C96951B118B7B57C001100A1 /* Build configuration list for PBXNativeTarget "example-cvtweak.4x4toggles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96951B218B7B57C001100A1 /* Debug */,
+				C96951B318B7B57C001100A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C969519118B7B57C001100A1 /* Project object */;
+}
