@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'example-cvtweak.4x4toggles' target in the 'example-cvtweak.4x4toggles' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
