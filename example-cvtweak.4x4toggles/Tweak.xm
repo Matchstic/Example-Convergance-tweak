@@ -37,10 +37,12 @@
     // Adjust toggle frame
     CVLockController *conv = [(SpringBoard*)[UIApplication sharedApplication] converganceLs];
         
-    CGRect frame = CGRectMake(SCREEN_WIDTH*0.125, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.75, SCREEN_HEIGHT*0.375);
-    if (IS_IPHONE_5)
+    CGRect frame = CGRectMake(SCREEN_WIDTH*0.2, SCREEN_HEIGHT*0.25, SCREEN_WIDTH*0.6, SCREEN_HEIGHT*0.375);
+    if (IS_IPHONE_5) {
         frame.size.height = SCREEN_HEIGHT*0.45;
-        
+        frame.origin.y = SCREEN_HEIGHT*0.235;
+    }
+    
     conv.toggles.collectionView.frame = frame;
 }
 

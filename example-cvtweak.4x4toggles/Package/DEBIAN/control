@@ -1,6 +1,6 @@
 Package: com.matchstic.4x4toggles
 Name: 4x4 Toggles
-Version: 1.0-1
+Version: 1.0.1
 Description: 4x4 Toggles for Convergance
 Section: Addons (Convergance)
 Depends: firmware (>= 6.0), mobilesubstrate, com.matchstic.Convergance
@@ -8,6 +8,6 @@ Priority: optional
 Architecture: iphoneos-arm
 Author: Matt Clarke <matt@incendo.ws>
 dev: Matt Clarke <matt@incendo.ws>
-Depiction: 
+Depiction: http://repo.incendo.ws/depictions/com.matchstic.4x4toggles.html
 Maintainer: Matt Clarke <matt@incendo.ws>
 
