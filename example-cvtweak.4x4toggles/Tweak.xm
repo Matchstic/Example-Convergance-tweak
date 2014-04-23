@@ -15,10 +15,14 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define IS_IPHONE_5 ([[UIScreen mainScreen] bounds].size.height == 568.0f)
 
-// Interface declaration for accessing Convergance at runtime
+// Interface declarations
+@interface CVAPI : NSObject
++(CVLockController*)mainWindow;
++(CVLockSlider*)mainScrollView;
+@end
 
-@interface SpringBoard
--(CVLockController*)converganceLs;
+@interface CVResources : NSObject
++(BOOL)lockScreenEnabled;
 @end
 
 // Hooks
@@ -33,22 +37,31 @@
 
 -(void)lock {
     %orig;
-
-    // Adjust toggle frame
-    CVLockController *conv = [(SpringBoard*)[UIApplication sharedApplication] converganceLs];
-        
-    CGRect frame = CGRectMake(SCREEN_WIDTH*0.2, SCREEN_HEIGHT*0.25, SCREEN_WIDTH*0.6, SCREEN_HEIGHT*0.375);
-    if (IS_IPHONE_5) {
-        frame.size.height = SCREEN_HEIGHT*0.45;
-        frame.origin.y = SCREEN_HEIGHT*0.235;
-    }
     
-    conv.toggles.collectionView.frame = frame;
+    if ([objc_getClass("CVResources") lockScreenEnabled]) {
+        // Adjust toggle frame
+        CVLockController *conv = [objc_getClass("CVAPI") mainWindow];
+    
+        UIView *example = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 0, 50, 50)];
+        example.backgroundColor = [UIColor blueColor];
+    
+        [[objc_getClass("CVAPI") mainScrollView] addSubview:example];
+        
+        CGRect frame = CGRectMake(SCREEN_WIDTH*0.2, SCREEN_HEIGHT*0.25, SCREEN_WIDTH*0.6, SCREEN_HEIGHT*0.375);
+        if (IS_IPHONE_5) {
+            frame.size.height = SCREEN_HEIGHT*0.45;
+            frame.origin.y = SCREEN_HEIGHT*0.235;
+        }
+    
+        conv.toggles.collectionView.frame = frame;
+    }
 }
 
 %end
 
 %end
+
+static BOOL isLocked;
 
 %group iOS7
 
@@ -57,14 +70,35 @@
 -(void)lockUIFromSource:(int)arg1 withOptions:(id)arg2 {
     %orig;
     
-    // Adjust toggle frame
-    CVLockController *conv = [(SpringBoard*)[UIApplication sharedApplication] converganceLs];
+    if ([objc_getClass("CVResources") lockScreenEnabled] && !isLocked) {
+        // Adjust toggle frame
+        CVLockController *conv = [objc_getClass("CVAPI") mainWindow];
         
-    CGRect frame = CGRectMake(SCREEN_WIDTH*0.125, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.75, SCREEN_HEIGHT*0.375);
-    if (IS_IPHONE_5)
-        frame.size.height = SCREEN_HEIGHT*0.45;
+        UIView *example = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 0, 50, 50)];
+        example.backgroundColor = [UIColor blueColor];
         
-    conv.toggles.collectionView.frame = frame;
+        [[objc_getClass("CVAPI") mainScrollView] addSubview:example];
+        
+        CGRect frame = CGRectMake(SCREEN_WIDTH*0.2, SCREEN_HEIGHT*0.25, SCREEN_WIDTH*0.6, SCREEN_HEIGHT*0.375);
+        if (IS_IPHONE_5) {
+            frame.size.height = SCREEN_HEIGHT*0.45;
+            frame.origin.y = SCREEN_HEIGHT*0.235;
+        }
+        
+        conv.toggles.collectionView.frame = frame;
+        
+        isLocked = YES;
+    }
+}
+
+%end
+
+%hook SBLockScreenViewController
+
+-(void)deactivate {
+    %orig;
+    
+    isLocked = NO;
 }
 
 %end

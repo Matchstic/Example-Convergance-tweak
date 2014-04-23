@@ -11,82 +11,87 @@
 #import <BulletinBoard/BBBulletin.h>
 #import <QuartzCore/QuartzCore.h>
 #import <SpringBoard6.0/SBWorkspace.h>
+#import <SpringBoard7.0/SBLockScreenViewController.h>
+#import "UIImageAverageColorAddition.h"
 
-@interface CVResources : NSObject 
+@interface CVResources : NSObject
 
-+(void)setIsUnlocking:(BOOL)val;
+// Unlocking variables
+
++(void)setIsUnlocking:(BOOL)val; // Set this to deallocate Convergance on unlock
 +(BOOL)getIsUnlocking;
-
 +(BOOL)unlockedWithBulletin;
 +(void)setUnlockedWithBulletin:(BOOL)val;
++(void)setDontAnimateOut:(BOOL)dontAnimate; // Prevent Convergance from animating while unlocking
++(BOOL)getDontAnimateOut;
 
-+(void)addBulletinToAvailableLockNotifications:(SBAwayBulletinListItem*)bulletin atIndexPath:(NSIndexPath*)path;
-+(void)removeBulletinFromAvailableLockNotifications:(SBAwayBulletinListItem*)bulletin;
-+(void)addBundleIdToLockBulletinList:(NSString*)identifier;
-+(void)removeBundleIdFromLockBulletins:(NSString*)identifier;
-+(void)emptyLockBulletinList;
-+(NSMutableArray*)getAvailableLockNotifications;
+// ===================================================
+
 +(NSMutableArray*)getLockBulletinIds;
-+(void)emptyAvailableLockBulletins;
-
-+(void)setLockFullscreenNotificationIndexPath:(NSIndexPath*)row;
-+(int)getLockFullscreenNotificationIndexPath;
-+(void)addNewBBBulletin:(BBBulletin*)bulletin toDictionaryWithKey:(NSString*)key;
-+(void)removeBBBulletin:(BBBulletin*)bulletin fromDictionaryWithKey:(NSString*)key;
-+(NSMutableArray*)arrayfromLockNotificationDictionaryForKey:(NSString*)key;
 +(void)setLockFullscreenNotificationBundleId:(NSString*)bundleid;
 +(NSString*)getLockFullscreenNotificationBundleId;
 +(void)setShowingLockFullscreenNotification:(BOOL)enabled;
 +(BOOL)getShowingLockFullscreenNotification;
 +(void)setLockFullscreenBBBulletin:(id)bulletin;
 +(BBBulletin*)getLockFullscreenBBBulletin;
-+(void)setOriginalLockNotifCellRect:(CGRect)rect;
-+(CGRect)getOriginalLockNotifCellRect;
 
-+(void)setLockWorkspace:(id)workspace;
-+(SBWorkspace*)getLockWorkspace;
-+(void)removeLockWorkspace;
+// Easy way of checking whether some tweaks are enabled
 
 +(BOOL)biteSMSQrEnabled;
++(BOOL)biteSMSEnabled;
 +(BOOL)couriaEnabledForBulletin:(NSString*)arg1;
-+(BOOL)dontUseCustomNotificationIcons;
-
 +(BOOL)isGuestModeEnabled;
 
-+(BOOL)overridePasscodeSet;
+// ===================================================
 
-+(float)perceivedBrightnessOfImage:(UIImage*)image inRect:(CGRect)rect;
-+(BOOL)hasLightWallpaper;
+// Passcode detection - supports use of CleverPin etc
+
++(BOOL)deviceIsLocked;
+// CVLockPasscodeView will provide further information about the passcode
+
+// ===================================================
+
+// Returns various images and strings used within Convergance appropriate to the current theme and device language
 
 +(NSString*)themedResourceFilePathWithName:(NSString*)name andExtension:(NSString*)ext;
 +(NSString*)themedBundleFilePathWithName:(NSString*)name;
 +(NSString*)localisedStringForKey:(NSString*)key value:(NSString*)val;
 
+// ===================================================
+
+// Main Convergance settings
+
 +(BOOL)lockScreenEnabled;
-+(void)setCachedLockscreenNil;
 +(BOOL)showBatteryPercent;
 +(NSArray*)lockWidgets;
 +(NSArray*)lockToggles;
 +(int)lockBlurRadius;
 +(BOOL)isUsingLightFonts;
 +(int)lockArtworkVariant;
-+(BOOL)isFirstLock;
-+(void)setIsFirstLock:(BOOL)set;
-+(BOOL)lockedYet;
-+(void)setLockedYet:(BOOL)val;
-+(BOOL)needsRefreshLockWallpaper;
-+(void)setNeedsRefreshLockWallpaper:(BOOL)set;
-
 +(BOOL)lockHTMLEnabled;
 +(NSString*)lockHTMLTheme;
 +(BOOL)lockHTMLDoesScroll;
++(BOOL)showDismissButton;
++(double)lockScreenIdleTime;
++(NSString*)htmlDirectory;
++(BOOL)fadeHTMLUnderNotif;
++(BOOL)showClock;
++(BOOL)dontUseCustomNotificationIcons;
++(BOOL)useSquareIcons;
++(BOOL)disableBatteryUI;
++(BOOL)disableIntensiveEffects;
++(BOOL)hasLightWallpaper;
++(UIColor*)adjustedColour;
++(BOOL)useTransparentText;
 
-+(void)setDontAnimateOut:(BOOL)dontAnimate;
-+(BOOL)getDontAnimateOut;
-+(void)setCurrentPasscodeDictionary:(NSDictionary*)dict;
-+(NSDictionary*)getCurrentPasscodeDictionary;
+// ===================================================
 
+// Used internally, but exposed if needed
+
++(SBLockScreenViewController*)lockScreenViewController;
 +(void)reloadSettings;
 +(void)reloadNotificationInformation;
+
+// ===================================================
 
 @end

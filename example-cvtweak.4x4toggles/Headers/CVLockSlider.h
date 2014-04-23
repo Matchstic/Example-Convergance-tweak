@@ -11,6 +11,4 @@
 
 @interface CVLockSlider : UIScrollView
 
--(void)changePanGestureEnabledTo:(BOOL)enabled;
-
 @end

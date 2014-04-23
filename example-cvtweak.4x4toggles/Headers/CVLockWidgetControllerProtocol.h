@@ -4,16 +4,12 @@
 -(float)viewHeight;
 
 @optional // I'll implement these eventually
--(void)viewWillDisappear;
+-(void)viewWillAppear;
 -(void)viewDidAppear;
--(void)unloadPresentationController;
--(id)presentationControllerForMode:(int)mode;
--(void)loadView;
--(void)clearShapshotImage;
--(void)unloadView;
+-(void)viewWillDisappear;
+-(void)viewDidDisappear;
 -(void)didRotateFromInterfaceOrientation:(int)interfaceOrientation;
+-(void)didRotateToInterfaceOrientation:(int)interfaceOrientation;
 -(void)willAnimateRotationToInterfaceOrientation:(int)interfaceOrientation;
 -(void)willRotateToInterfaceOrientation:(int)interfaceOrientation;
--(void)viewDidDisappear;
--(void)viewWillAppear;
 @end

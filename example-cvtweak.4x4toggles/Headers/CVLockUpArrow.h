@@ -10,10 +10,7 @@
 
 @interface CVLockUpArrow : UIView <UIGestureRecognizerDelegate>
 
-@property (readwrite, nonatomic) BOOL touchedRightPlace;
-@property (nonatomic, retain) UIView *sliderUp;
 @property (nonatomic, retain) UIImageView *up;
-@property (nonatomic, retain) NSDate *lastTouchTime;
 @property (readwrite) BOOL isDragging;
 
 -(id)initWithFrame:(CGRect)frame;

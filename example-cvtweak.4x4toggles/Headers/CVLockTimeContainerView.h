@@ -16,21 +16,17 @@
 
 @property (nonatomic, retain) UIView *timeContainer;
 @property (nonatomic, retain) UIView *musicContainer;
+@property (nonatomic, strong) UIProgressView *battery;
 @property (nonatomic, retain) UILabel *date;
 @property (nonatomic, retain) UILabel *time;
-@property (nonatomic, retain) NSTimer *timeUpdater;
 @property (nonatomic, retain) CVReactiveButton *play;
 @property (nonatomic, retain) CVReactiveButton *forward;
 @property (nonatomic, retain) CVReactiveButton *rewind;
 @property (nonatomic, retain) UILabel *artist;
 @property (nonatomic, retain) UILabel *title;
-@property (nonatomic, retain) UIImageView *artwork;
-@property (readwrite) BOOL requiresUpdateToInfo;
-@property (nonatomic, strong) NSTimer *retryTitles;
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, retain) UIImageView *artwork; // Only present if variant is 2
 
 @property (nonatomic, readwrite) BOOL dontShowDate;
-@property (nonatomic, strong) UIProgressView *battery;
 
 -(void)updateDate;
 -(void)updateDateWithBattery:(BOOL)arg1;
