@@ -5,7 +5,7 @@ Convergance offers support for other developers to extend or modify itself at ru
 
 To access Convergance at runtime, simply call
 
-*[CVAPI mainWindow]*
+*[objc_getClass("CVAPI") mainWindow]*
 
 which will return an object of type CVLockController.
 
